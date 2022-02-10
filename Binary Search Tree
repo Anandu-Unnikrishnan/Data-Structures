@@ -1,0 +1,87 @@
+#include<stdio.h>
+void insert(int arr[]);
+void display(int arr[]);
+int main()
+{
+int arr[50]={[0 ... 49]=-1};
+int n=0;
+while(n!=3)
+{
+printf("\n--OPERATIONS--\n");
+printf("\n1.Insert\n2.Display\n3.Exit\n");
+scanf("%d",&n);
+switch (n)
+{
+case 1:
+{
+insert(arr);
+break;
+}
+case 2:
+{
+display(arr);
+break;
+}
+case 3:
+{
+printf("Successfully exited!");
+}
+break;
+default:
+printf("Invalid Choice!");
+break;
+}
+}
+return 0;
+}
+void insert(int arr[])
+{
+if(arr[1]==-1)
+{
+printf("Enter the root value: ");
+scanf("%d",&arr[1]);
+printf("Root inserted!\n");
+}
+else
+{
+printf("On which node do you want to insert: ");
+int i;
+scanf("%d",&i);
+if(arr[i]==-1)
+{
+printf("Insertion not possible (parent doesn't exist).\n");
+}
+else
+{
+printf("Left Child(L) or Right Child(R)?");
+char s,ch;
+scanf("%c%c",&s,&ch);
+if(ch=='l'||ch=='L')
+{
+printf("Enter the value of the node: ");
+scanf("%d",&arr[2*i]);
+printf("Node inserted!");
+}
+else if(ch=='r'|| ch=='R')
+{
+printf("Enter the value of the node: ");
+scanf("%d",&arr[(2*i)+1]);
+printf("Node inserted!");
+}
+else
+{
+printf("Invalid Input!");
+}
+}
+}
+}
+void display(int arr[])
+{
+for(int i=1;i<50;i++)
+{
+if(arr[i]!=-1)
+{
+printf("%d ",arr[i]);
+}
+}
+}
